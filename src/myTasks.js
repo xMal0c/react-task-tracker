@@ -1,4 +1,4 @@
-const tasks = [
+export const myTasks = [
   {
     id: 1,
     text: "Dentist",
@@ -15,16 +15,6 @@ const tasks = [
     id: 3,
     text: "Lunch",
     day: "29.3.2024",
-    reminder: true,
+    reminder: false,
   },
 ];
-
-export const Task = () => {
-  return (
-    <>
-      {tasks.map((task) => (
-        <h3 key={task.id}>{task.text}</h3>
-      ))}
-    </>
-  );
-};

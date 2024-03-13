@@ -1,14 +1,13 @@
 import { Button } from "./Button";
 
-export const Header = ({ title }) => {
-  const onClick = () => {
-    console.log("Click");
-  };
+export const Header = ({ title, onAdd, showAdd }) => {
+  let text = showAdd ? "Close" : "Add +";
+  let color = showAdd ? "#fc5b5b" : "black";
 
   return (
     <header className="header">
       <h1>{title}</h1>
-      <Button color="black" text="Add +" onClick={onClick} />
+      <Button color={color} text={text} onClick={onAdd} />
     </header>
   );
 };

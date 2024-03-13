@@ -3,12 +3,63 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /*zoom: 110%;*/
 }
+
+.clouds-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Use viewport height to ensure full screen coverage */
+  z-index: -20;
+  overflow: hidden;
+}
+
+/* Clouds.css */
+.clouds-container .cloud {
+  position: relative;
+  width: 100%;
+  height: 175px; /* Adjust based on your needs */
+  background-repeat: repeat-x;
+  background-size: contain;
+  z-index: -20;
+  overflow: hidden;
+}
+
+.cloud1 {
+  animation: moveCloud 110s linear infinite;
+}
+
+.cloud2 {
+  animation: moveCloud 150s linear infinite;
+}
+
+.cloud3 {
+  animation: moveCloud 190s linear infinite;
+}
+
+.cloud4 {
+  animation: moveCloud 130s linear infinite;
+}
+
+@keyframes moveCloud {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+}
+
 body {
   font-family: "Poppins", sans-serif;
-  /* background-color: #cbdddf; */
   background-color: #87bddf;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 .container {
   background-color: white;
   max-width: 500px;
@@ -53,10 +104,16 @@ body {
   background: #f4f4f4;
   margin: 5px;
   padding: 10px 20px;
-  cursor: pointer;
+  border-radius: 2px;
+  cursor: default;
 }
+
+.task:hover {
+  background: #e7f5fe;
+}
+
 .task.reminder {
-  border-left: 5px solid green;
+  border-left: 5px solid #5fe896;
 }
 .task h3 {
   display: flex;
@@ -78,6 +135,7 @@ body {
   margin: 5px;
   padding: 3px 7px;
   font-size: 17px;
+  transition: 0.2s;
 }
 .form-control-check {
   display: flex;
