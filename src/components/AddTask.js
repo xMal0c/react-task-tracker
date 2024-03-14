@@ -55,6 +55,7 @@ export const AddTask = ({ onAdd }) => {
           value={reminder}
           onChange={(e) => setReminder(e.currentTarget.checked)}
           type="checkbox"
+          style={{ accentColor: "black" }}
         />
       </div>
 

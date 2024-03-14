@@ -1,22 +1,22 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "text": "Dentist",
-      "day": "20.3.2024",
+      "id": "ad16",
+      "text": "Car wash",
+      "day": "12.4.2024",
       "reminder": true
     },
     {
-      "id": 2,
-      "text": "Study",
-      "day": "24.3.2024",
+      "id": "cd98",
+      "text": "Take a break",
+      "day": "10.4.2024",
       "reminder": false
     },
     {
-      "id": 3,
-      "text": "Lunch",
-      "day": "29.3.2024",
-      "reminder": false
+      "id": "75a5",
+      "text": "Feed the dog",
+      "day": "15.3.2024",
+      "reminder": true
     }
   ]
 }
