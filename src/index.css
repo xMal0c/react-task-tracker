@@ -3,7 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /*zoom: 110%;*/
+  zoom: 110%;
 }
 
 .clouds-container {
@@ -20,7 +20,7 @@
 .clouds-container .cloud {
   position: relative;
   width: 100%;
-  height: 175px; /* Adjust based on your needs */
+  height: 190px; /* Adjust based on your needs */
   background-repeat: repeat-x;
   background-size: contain;
   z-index: -20;
@@ -62,11 +62,11 @@ body {
 
 .container {
   background-color: white;
-  max-width: 500px;
+  max-width: 650px;
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  padding: 30px;
+  padding: 40px;
   border-radius: 6px;
   box-shadow: 0 4px 16px 4px rgba(0, 0, 0, 0.1);
 }
@@ -157,6 +157,72 @@ body {
   height: 20px;
 }
 footer {
-  margin-top: 30px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 20px;
   text-align: center;
+}
+
+.about-version {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #5f5f5f;
+}
+
+.to-about {
+  text-decoration: none;
+  transition: 0.05s;
+  color: #000;
+}
+
+.to-about:hover {
+  color: #5f5f5f;
+}
+
+.to-about:active {
+  color: #5f5f5f;
+}
+
+.about-version-back {
+  text-align: center;
+  text-decoration: none;
+  color: #5f5f5f;
+  transition: 0.05s;
+}
+
+.about-version-back:hover {
+  color: #000000;
+}
+
+.about-version-back:active {
+  color: #000000;
+}
+
+.under-clouds {
+  position: relative;
+  z-index: -21;
+}
+
+@media screen and (max-width: 600px) {
+  * {
+    zoom: normal;
+  }
+
+  .container {
+    margin: 15px;
+    margin-top: 100px;
+    padding: 30px;
+  }
+  .btn {
+    font-size: 16px;
+  }
+  .task h3 {
+    font-size: 15px;
+  }
+  .about-version {
+    font-size: 14px;
+  }
 }

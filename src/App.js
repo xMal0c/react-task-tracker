@@ -4,6 +4,10 @@ import { useEffect, useState } from "react";
 import Clouds from "./Cloud";
 // import { myTasks } from "./myTasks";
 import { AddTask } from "./components/AddTask";
+import { About } from "./components/About";
+import { Footer } from "./components/Footer";
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const server = "http://localhost:5004";
@@ -95,23 +99,36 @@ function App() {
   return (
     <>
       <Clouds />
-      <div className="container">
-        <Header
-          title="To Do List"
-          onAdd={() => setShowAddTask(!showAddTask)}
-          showAdd={showAddTask}
-        />
-        {showAddTask && <AddTask onAdd={addTask} />}
-        {tasks.length > 0 ? (
-          <Tasks
-            tasks={tasks}
-            onDelete={deleteTask}
-            onToggle={toggleReminder}
+      <Router>
+        <div className="container">
+          <Header
+            title="To Do List"
+            onAdd={() => setShowAddTask(!showAddTask)}
+            showAdd={showAddTask}
           />
-        ) : (
-          "No tasks to show"
-        )}
-      </div>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  {showAddTask && <AddTask onAdd={addTask} />}
+                  {tasks.length > 0 ? (
+                    <Tasks
+                      tasks={tasks}
+                      onDelete={deleteTask}
+                      onToggle={toggleReminder}
+                    />
+                  ) : (
+                    "No tasks to show"
+                  )}
+                </>
+              }
+            />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
     </>
   );
 }
